@@ -1,4 +1,5 @@
 #!/bin/bash
 # Assign role to server.
-echo "Assign to $1 role."
+PAYLOAD=$(cat)
+echo "Assign to $PAYLOAD role."
 echo "My role is $SERF_SELF_ROLE"

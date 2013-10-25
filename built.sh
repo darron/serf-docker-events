@@ -1,4 +1,5 @@
 #!/bin/bash
 # Tell master that it's built.
-echo "Built: $1"
+PAYLOAD=$(cat)
+echo "Built: $PAYLOAD"
 echo "My role is $SERF_SELF_ROLE"
