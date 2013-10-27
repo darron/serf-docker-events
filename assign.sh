@@ -1,5 +1,6 @@
 #!/bin/bash
 # Assign role to server.
+# Ex: "serf event assign server-name,role-name"
 PAYLOAD=$(cat)
 TARGET=$(echo $PAYLOAD | cut -f1 -d,)
 ROLE=$(echo $PAYLOAD | cut -f2 -d,)
