@@ -9,10 +9,15 @@ BUILD_DIR=`mktemp -d`
 echo "Build: $REPO as $IMAGE in $BUILD_DIR"
 echo "My role is $SERF_SELF_ROLE"
 
-git clone $REPO $BUILD_DIR
-echo "/usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR"
-/usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR
+if [ $SERF_SELF_ROLE == 'build' ]
+then
+  git clone $REPO $BUILD_DIR
+  echo "/usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR"
+  /usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR
 
-# Tag
+  # Tag
 
-# Push
+  # Push
+else
+  echo "$SERF_SELF_NAME is not in a build role."
+fi
