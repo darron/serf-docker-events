@@ -9,7 +9,7 @@ PORT=$(echo $PAYLOAD | cut -f3 -d,)
 echo "Route: $CONTAINER as $NAME to $IP and $PORT"
 echo "My role is $SERF_SELF_ROLE"
 
-if [ $SERF_SELF_ROLE == 'route' ]
+if [ $SERF_SELF_ROLE == 'serve' ]
 then
   # Grab data about the container's domain name. (etcd, Dynamo, etc.)
   $DOMAIN_NAME = "www.testing.com" # FIXME

@@ -5,4 +5,7 @@ ID=$(cat)
 echo "Stop: $ID"
 echo "My role is $SERF_SELF_ROLE"
 
-/usr/bin/docker stop $ID
+if [ $SERF_SELF_ROLE == 'serve' ]
+then
+  /usr/bin/docker stop $ID
+fi
