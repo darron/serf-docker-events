@@ -12,8 +12,8 @@ echo "My role is $SERF_SELF_ROLE"
 if [ $SERF_SELF_ROLE == 'build' ]
 then
   git clone $REPO $BUILD_DIR
-  echo "/usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR"
-  /usr/bin/docker build -t nonfiction/$IMAGE $BUILD_DIR
+  echo "/usr/bin/docker build -t octohost/$IMAGE $BUILD_DIR"
+  /usr/bin/docker build -t octohost/$IMAGE $BUILD_DIR
 
   # Tag
 
