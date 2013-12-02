@@ -5,7 +5,8 @@ RMI=$(cat)
 echo "RMI: $RMI"
 echo "$SERF_SELF_NAME role is $SERF_SELF_ROLE"
 
-if [ $SERF_SELF_ROLE != 'master' ]; then
+if [ $SERF_SELF_ROLE != 'master' ]
+then
   /usr/bin/docker rmi $RMI
 fi
 
