@@ -3,6 +3,9 @@
 # Ex: serf event rmi darron/nginx
 RMI=$(cat)
 echo "RMI: $RMI"
-echo "My role is $SERF_SELF_ROLE"
+echo "$SERF_SELF_NAME role is $SERF_SELF_ROLE"
 
-/usr/bin/docker rmi $RMI
+if [ $SERF_SELF_ROLE != 'master' ]; then
+  /usr/bin/docker rmi $RMI
+fi
+
