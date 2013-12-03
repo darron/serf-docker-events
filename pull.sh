@@ -8,4 +8,5 @@ echo "My role is $SERF_SELF_ROLE"
 if [ $SERF_SELF_ROLE == 'serve' ]
 then
   /usr/bin/docker pull $CONTAINER
+  serf event run $CONTAINER
 fi
